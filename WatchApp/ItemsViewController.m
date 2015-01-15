@@ -87,6 +87,16 @@
     [self.shoppingList updateLists];
     [self.shoppingList save];
     [tableView reloadData];
+    
+//    UITableViewRowAnimation animation = indexPath.section == 0 ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
+//    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,2)];
+//    [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationMiddle];
+    
+    
+//    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//    NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section == 0 ? 1 : 0];
+//    [tableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationMiddle];
+//    [tableView moveRowAtIndexPath:indexPath toIndexPath:newPath];
 }
 
 
@@ -99,6 +109,8 @@
             [self.shoppingList addItem:item];
             [self.shoppingList save];
             [self.itemsTableView reloadData];
+//            NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
+//            [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationMiddle];
             textField.text = @"";
         }
         
