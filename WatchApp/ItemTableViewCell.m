@@ -20,11 +20,8 @@
     // Configure the view for the selected state
 }
 
--(void) bindTo:(Item *)item {
+- (void)bindTo:(Item *)item {
     self.item = item;
-    
-    
-    
     
     if (item.checked) {
         NSAttributedString * title =
@@ -38,8 +35,10 @@
         
         self.accessoryType = UITableViewCellAccessoryNone;
     }
-    
-//    [self.checkedSwitch setOn:item.checked animated:NO];
+}
+
+- (void)rebind {
+    [self bindTo:self.item];
 }
 
 - (IBAction)checkedValueChanged:(id)sender {

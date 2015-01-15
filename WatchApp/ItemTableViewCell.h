@@ -12,5 +12,6 @@
 @interface ItemTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UILabel *itemNameLabel;
 @property Item* item;
--(void) bindTo:(Item *)item;
+- (void)bindTo:(Item *)item;
+- (void)rebind;
 @end

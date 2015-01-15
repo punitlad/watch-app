@@ -81,24 +81,22 @@
     // dismiss keyboard
     [self.itemTextField resignFirstResponder];
     
+    ItemTableViewCell *cell = (ItemTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    [cell.item check];
+    [cell rebind];
     
-    NSArray *list = indexPath.section == 0 ? self.shoppingList.sortedItems : self.shoppingList.sortedCompletedItems;
-    [list[indexPath.row] check];
     [self.shoppingList updateLists];
     [self.shoppingList save];
-    [tableView reloadData];
     
-//    UITableViewRowAnimation animation = indexPath.section == 0 ? UITableViewRowAnimationBottom : UITableViewRowAnimationTop;
-//    NSIndexSet *indexSet = [NSIndexSet indexSetWithIndexesInRange:NSMakeRange(0,2)];
-//    [tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationMiddle];
+    NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section == 0 ? 1 : 0];
     
-    
-//    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationMiddle];
-//    NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:indexPath.section == 0 ? 1 : 0];
-//    [tableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationMiddle];
-//    [tableView moveRowAtIndexPath:indexPath toIndexPath:newPath];
+    [CATransaction begin];
+    [CATransaction setCompletionBlock:^{
+        [tableView reloadData];
+    }];
+    [tableView moveRowAtIndexPath:indexPath toIndexPath:newPath];
+    [CATransaction commit];
 }
-
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.itemTextField) {
@@ -108,10 +106,16 @@
             Item *item = [[Item alloc] initWith:textField.text];
             [self.shoppingList addItem:item];
             [self.shoppingList save];
-            [self.itemsTableView reloadData];
-//            NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
-//            [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationMiddle];
+
             textField.text = @"";
+
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:^{
+                [self.itemsTableView reloadData];
+            }];
+            NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationTop];
+            [CATransaction commit];
         }
         
         return NO;
