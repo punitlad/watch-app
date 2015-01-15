@@ -18,6 +18,7 @@
 		4F1A7B971A6718CB006E48FF /* ShoppingListAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F1A7B9B1A6718EE006E48FF /* ShoppingListAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; };
 		4F1A7B9C1A6718EE006E48FF /* ShoppingListAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */; };
 		4F35A48F1A64210500699C2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A48E1A64210500699C2E /* main.m */; };
 		4F35A4921A64210500699C2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4911A64210500699C2E /* AppDelegate.m */; };
 		4F35A4981A64210500699C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A4961A64210500699C2E /* Main.storyboard */; };
@@ -137,6 +138,8 @@
 		4F1A7B871A66DB7B006E48FF /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
 		4F1A7B881A66DB7B006E48FF /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		4F1A7B891A66DB7B006E48FF /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
+		4F1A7B9E1A687720006E48FF /* GlanceInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlanceInterfaceController.h; sourceTree = "<group>"; };
+		4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlanceInterfaceController.m; sourceTree = "<group>"; };
 		4F35A4891A64210500699C2E /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A48D1A64210500699C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F35A48E1A64210500699C2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				4FF7B3921A65C2E200224919 /* Supporting Files */,
 				4F1A7AEB1A65C789006E48FF /* ItemTableRowController.h */,
 				4F1A7AEC1A65C789006E48FF /* ItemTableRowController.m */,
+				4F1A7B9E1A687720006E48FF /* GlanceInterfaceController.h */,
+				4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */,
 			);
 			path = "WatchApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F1A7AED1A65C789006E48FF /* ItemTableRowController.m in Sources */,
+				4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */,
 				4FF7B3961A65C2E200224919 /* InterfaceController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

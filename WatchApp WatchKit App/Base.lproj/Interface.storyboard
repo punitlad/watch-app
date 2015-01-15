@@ -38,5 +38,28 @@
                 </controller>
             </objects>
         </scene>
+        <!--Glance Interface Controller-->
+        <scene sceneID="9p7-WV-F6t">
+            <objects>
+                <glanceController id="haG-Oj-aTX" customClass="GlanceInterfaceController">
+                    <items>
+                        <group alignment="left" id="qed-gR-sLf">
+                            <items>
+                                <label width="136" alignment="left" text="Grocery List" id="D3L-Ke-lcA"/>
+                            </items>
+                        </group>
+                        <group alignment="left" id="crY-h4-Uet">
+                            <items>
+                                <label width="136" height="101" alignment="left" text="info" textAlignment="left" numberOfLines="11" id="Mbb-Hc-CZ3"/>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="infoLabel" destination="Mbb-Hc-CZ3" id="qGt-pa-2ra"/>
+                    </connections>
+                </glanceController>
+            </objects>
+            <point key="canvasLocation" x="305" y="622"/>
+        </scene>
     </scenes>
 </document>

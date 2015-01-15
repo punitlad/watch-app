@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>83423D95-83BF-40B9-88AA-1667316AE040</string>
+	<key>IDESourceControlProjectName</key>
+	<string>WatchApp</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>10D6C2962550CBD22051F2BC92D872ECEAE9B3FF</key>
+		<string>github.com:stephanebisson/watch-app.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>WatchApp.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>10D6C2962550CBD22051F2BC92D872ECEAE9B3FF</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:stephanebisson/watch-app.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>10D6C2962550CBD22051F2BC92D872ECEAE9B3FF</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>10D6C2962550CBD22051F2BC92D872ECEAE9B3FF</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WatchApp</string>
+		</dict>
+	</array>
+</dict>
+</plist>
