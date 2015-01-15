@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="lFp-Ce-Xjs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6724" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fxS-ps-UOo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6711"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="p70-uz-Prb">
+            <objects>
+                <navigationController id="fxS-ps-UOo" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="a6f-ey-iVT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="lFp-Ce-Xjs" kind="relationship" relationship="rootViewController" id="PI5-yY-Y5J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Q8-zS-m22" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="167" y="-48"/>
+        </scene>
         <!--Items View Controller-->
         <scene sceneID="IbV-OV-EEl">
             <objects>
-                <viewController id="lFp-Ce-Xjs" customClass="ItemsViewController" sceneMemberID="viewController">
+                <viewController title="Items View Controller" id="lFp-Ce-Xjs" customClass="ItemsViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0v4-pm-PH4"/>
                         <viewControllerLayoutGuide type="bottom" id="iTK-62-d5i"/>
@@ -17,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap here to add something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a60-Xz-rCK">
-                                <rect key="frame" x="16" y="28" width="288" height="30"/>
+                                <rect key="frame" x="16" y="72" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
@@ -25,7 +41,7 @@
                                 </connections>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="03y-sh-Dor">
-                                <rect key="frame" x="0.0" y="83" width="320" height="485"/>
+                                <rect key="frame" x="0.0" y="110" width="320" height="458"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="item" id="uvU-iu-R5h" customClass="ItemTableViewCell">
@@ -57,9 +73,10 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="a60-Xz-rCK" secondAttribute="centerX" id="2a9-vZ-gVb"/>
                             <constraint firstItem="03y-sh-Dor" firstAttribute="width" secondItem="SQH-KG-Y2T" secondAttribute="width" id="h4W-q4-CtA"/>
-                            <constraint firstItem="03y-sh-Dor" firstAttribute="height" secondItem="SQH-KG-Y2T" secondAttribute="height" constant="-83" id="zaP-tU-Tui"/>
+                            <constraint firstItem="03y-sh-Dor" firstAttribute="height" secondItem="SQH-KG-Y2T" secondAttribute="height" constant="-110" id="zaP-tU-Tui"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Grocery List" id="MHs-40-ocm"/>
                     <connections>
                         <outlet property="itemTextField" destination="a60-Xz-rCK" id="DRQ-um-Gyd"/>
                         <outlet property="itemsTableView" destination="03y-sh-Dor" id="NqE-XX-5NO"/>
@@ -67,7 +84,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uWY-jN-B0a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="993" y="136"/>
+            <point key="canvasLocation" x="713" y="-48"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
