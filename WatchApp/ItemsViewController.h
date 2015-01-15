@@ -14,4 +14,5 @@
 @property (strong, nonatomic) IBOutlet UITableView *itemsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
 - (BOOL) inputIsEmpty;
+- (void)receiveNotification:(NSNotification*)notification;
 @end

@@ -22,8 +22,22 @@
     // Do any additional setup after loading the view.
     
     self.itemTextField.delegate = self;
-    
+
+    //--- reset state
+//    [[[ShoppingList alloc] init] save];
+    //---
+
     self.shoppingList = [ShoppingList load];
+
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self selector:@selector(receiveNotification:) name:@"applicationDidBecomeActive" object:nil];
+}
+
+- (void)receiveNotification:(NSNotification*)notification {
+    if ([notification.name  isEqual:@"applicationDidBecomeActive"]) {
+        self.shoppingList = [ShoppingList load];
+        [self.itemsTableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
