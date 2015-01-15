@@ -11,7 +11,6 @@
 @implementation ItemTableRowController
 
 - (IBAction)buttonPressed {
-    NSLog(@"button pressed. calling block...");
     self.itemCheckCAllbackBlock();
 }
 

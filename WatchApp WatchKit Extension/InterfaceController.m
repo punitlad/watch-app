@@ -27,11 +27,6 @@
     [super willActivate];
     self.shoppingList = [ShoppingList load];
     [self renderData];
-    
-//    NSDictionary *data = @{@"from": @"watch"};
-//    [WKInterfaceController openParentApplication:data reply:^(NSDictionary *replyInfo, NSError *error) {
-//        NSLog(@"reply from ios app d: '%@' and e: '%@'", replyInfo, error);
-//    }];
 }
 
 - (void)didDeactivate {
@@ -46,7 +41,6 @@
     for (Item *item in self.shoppingList.sortedItems) {
         ItemTableRowController *rowController = [self.itemTable rowControllerAtIndex:i];
         [rowController onItemCheck:^{
-            NSLog(@"inside of block...");
             [item check];
             [self.shoppingList updateLists];
             [self.shoppingList save];
