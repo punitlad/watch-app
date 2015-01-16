@@ -35,7 +35,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Tap here to add something" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a60-Xz-rCK">
                                 <rect key="frame" x="16" y="72" width="288" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                 <connections>
                                     <action selector="editingDidEnd:" destination="lFp-Ce-Xjs" eventType="editingDidEnd" id="kBs-Dw-fFX"/>
                                 </connections>

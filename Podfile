@@ -6,7 +6,7 @@ target 'WatchApp' do
 end
 
 target 'WatchAppTests' do
-
+    pod 'Kiwi'
 end
 
 target 'WatchApp WatchKit Extension' do

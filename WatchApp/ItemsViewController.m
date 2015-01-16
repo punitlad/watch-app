@@ -23,10 +23,8 @@
     
     self.itemTextField.delegate = self;
 
-    //--- reset state
-//    [[[ShoppingList alloc] init] save];
-    //---
-
+//    [[[ShoppingList alloc] initWithSampleData] save];
+    
     self.shoppingList = [ShoppingList load];
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
@@ -117,19 +115,40 @@
         [textField resignFirstResponder];
         
         if (![self inputIsEmpty]) {
-            Item *item = [[Item alloc] initWith:textField.text];
-            [self.shoppingList addItem:item];
+            
+            Item *item;
+            if ((item = [self.shoppingList itemWithName:textField.text]) != nil) {
+                NSArray *list = item.checked ? self.shoppingList.sortedCompletedItems : self.shoppingList.sortedItems;
+                int index = (int)[list indexOfObject:item];
+                NSIndexPath *fromPath = [NSIndexPath indexPathForRow:index inSection:item.checked ? 1 : 0];
+                NSIndexPath *toPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                
+                [item bringBack];
+                [self.shoppingList updateLists];
+                [self.shoppingList save];
+                
+                [CATransaction begin];
+                [CATransaction setCompletionBlock:^{
+                    [self.itemsTableView reloadData];
+                }];
+                [self.itemsTableView moveRowAtIndexPath:fromPath toIndexPath:toPath];
+                [CATransaction commit];
+                
+            } else {
+                item = [[Item alloc] initWith:textField.text];
+                [self.shoppingList addItem:item];
+                
+                [CATransaction begin];
+                [CATransaction setCompletionBlock:^{
+                    [self.itemsTableView reloadData];
+                }];
+                NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
+                [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationTop];
+                [CATransaction commit];
+            }
+            
             [self.shoppingList save];
-
             textField.text = @"";
-
-            [CATransaction begin];
-            [CATransaction setCompletionBlock:^{
-                [self.itemsTableView reloadData];
-            }];
-            NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
-            [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationTop];
-            [CATransaction commit];
         }
         
         return NO;

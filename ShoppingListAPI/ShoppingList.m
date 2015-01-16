@@ -25,19 +25,32 @@
     {
         
         self.items = [[NSMutableArray alloc] init];
+        [self updateLists];
+    }
+    
+    return self;
+}
+
+- (id) initWithSampleData {
+    if( self = [super init] )
+    {
+        
+        self.items = [[NSMutableArray alloc] init];
         [self addItem:[[Item alloc] initWith:@"Bread" andState:NO]];
         [self addItem:[[Item alloc] initWith:@"Cheese" andState:NO]];
         [self addItem:[[Item alloc] initWith:@"Wine" andState:YES]];
-        
         [self updateLists];
-        
-//        for (int i=0; i<50; i++) {
-//            NSString *itemName = [NSString stringWithFormat:@"item #%d", i];
-//            Item *newItem = [[Item alloc] initWith:itemName];
-//            [self.items addObject:newItem];
-//        }
     }
     
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    if (self) {
+        self.items = [coder decodeObjectForKey:@"items"];
+        [self updateLists];
+    }
     return self;
 }
 
@@ -67,16 +80,6 @@
     [aCoder encodeObject:self.items forKey:@"items"];
 }
 
-- (instancetype)initWithCoder:(NSCoder *)coder
-{
-    if (self) {
-        self.items = [coder decodeObjectForKey:@"items"];
-        
-        [self updateLists];
-    }
-    return self;
-}
-
 - (void) save {
     NSData *dataSave = [NSKeyedArchiver archivedDataWithRootObject:self];
     
@@ -84,6 +87,13 @@
     [userDefaults setObject:dataSave forKey:@"shoppingList"];
     [userDefaults synchronize];
 //    NSLog(@"shopping list saved");
+}
+
+- (Item*) itemWithName:(NSString*)name {
+    NSString *trimmedName = [name stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+    NSPredicate *sameName = [NSPredicate predicateWithFormat:@"name ==[c] %@", trimmedName];
+    NSArray *itemsWithSameName = [self.items filteredArrayUsingPredicate:sameName];
+    return itemsWithSameName.count > 0 ? itemsWithSameName[0] : nil;
 }
 
 @end

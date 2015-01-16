@@ -10,7 +10,6 @@
 		4F1A7AED1A65C789006E48FF /* ItemTableRowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7AEC1A65C789006E48FF /* ItemTableRowController.m */; };
 		4F1A7B5F1A66D479006E48FF /* ShoppingListAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F1A7B5E1A66D479006E48FF /* ShoppingListAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F1A7B651A66D479006E48FF /* ShoppingListAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; };
-		4F1A7B6E1A66D479006E48FF /* ShoppingListAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B6D1A66D479006E48FF /* ShoppingListAPITests.m */; };
 		4F1A7B8A1A66DB7B006E48FF /* ShoppingList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B861A66DB7B006E48FF /* ShoppingList.m */; };
 		4F1A7B8B1A66DB7B006E48FF /* ShoppingList.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F1A7B871A66DB7B006E48FF /* ShoppingList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4F1A7B8C1A66DB7B006E48FF /* Item.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B881A66DB7B006E48FF /* Item.m */; };
@@ -19,6 +18,7 @@
 		4F1A7B9B1A6718EE006E48FF /* ShoppingListAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; };
 		4F1A7B9C1A6718EE006E48FF /* ShoppingListAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */; };
+		4F1A7BA61A696903006E48FF /* ShoppingListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */; };
 		4F35A48F1A64210500699C2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A48E1A64210500699C2E /* main.m */; };
 		4F35A4921A64210500699C2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4911A64210500699C2E /* AppDelegate.m */; };
 		4F35A4981A64210500699C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A4961A64210500699C2E /* Main.storyboard */; };
@@ -27,12 +27,14 @@
 		4F35A4A91A64210500699C2E /* WatchAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4A81A64210500699C2E /* WatchAppTests.m */; };
 		4F35A4BD1A643F0A00699C2E /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */; };
 		4F35A4C01A64464100699C2E /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BF1A64464100699C2E /* ItemsViewController.m */; };
+		4FE341EC1A69A6520070580A /* ItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE341EB1A69A6510070580A /* ItemSpec.m */; };
 		4FF7B3961A65C2E200224919 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7B3951A65C2E200224919 /* InterfaceController.m */; };
 		4FF7B3981A65C2E200224919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B3971A65C2E200224919 /* Images.xcassets */; };
 		4FF7B39C1A65C2E200224919 /* WatchApp WatchKit App.app in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B39B1A65C2E200224919 /* WatchApp WatchKit App.app */; };
 		4FF7B3A41A65C2E200224919 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B3A21A65C2E200224919 /* Interface.storyboard */; };
 		4FF7B3A61A65C2E200224919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B3A51A65C2E200224919 /* Images.xcassets */; };
 		4FF7B3A91A65C2E200224919 /* WatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4FF7B3901A65C2E200224919 /* WatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD9E4942074F2724C659C90D /* libPods-WatchAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0AB804C5129723D7D79834 /* libPods-WatchAppTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0C644EDB6BB0E5AF2F6376F0 /* Pods-WatchAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchAppTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchAppTests/Pods-WatchAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		4F1A7AEB1A65C789006E48FF /* ItemTableRowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemTableRowController.h; sourceTree = "<group>"; };
 		4F1A7AEC1A65C789006E48FF /* ItemTableRowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableRowController.m; sourceTree = "<group>"; };
 		4F1A7AEE1A65D1EF006E48FF /* WatchApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = WatchApp.entitlements; sourceTree = "<group>"; };
@@ -133,13 +136,15 @@
 		4F1A7B5E1A66D479006E48FF /* ShoppingListAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ShoppingListAPI.h; sourceTree = "<group>"; };
 		4F1A7B641A66D479006E48FF /* ShoppingListAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F1A7B6C1A66D479006E48FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F1A7B6D1A66D479006E48FF /* ShoppingListAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListAPITests.m; sourceTree = "<group>"; };
 		4F1A7B861A66DB7B006E48FF /* ShoppingList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingList.m; sourceTree = "<group>"; };
 		4F1A7B871A66DB7B006E48FF /* ShoppingList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShoppingList.h; sourceTree = "<group>"; };
 		4F1A7B881A66DB7B006E48FF /* Item.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Item.m; sourceTree = "<group>"; };
 		4F1A7B891A66DB7B006E48FF /* Item.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Item.h; sourceTree = "<group>"; };
 		4F1A7B9E1A687720006E48FF /* GlanceInterfaceController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlanceInterfaceController.h; sourceTree = "<group>"; };
 		4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlanceInterfaceController.m; sourceTree = "<group>"; };
+		4F1A7BA11A69664D006E48FF /* libPods-WatchAppTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WatchAppTests.a"; path = "Pods/build/Debug-iphoneos/libPods-WatchAppTests.a"; sourceTree = "<group>"; };
+		4F1A7BA31A69667E006E48FF /* libPods-WatchAppTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WatchAppTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-WatchAppTests-Kiwi.a"; sourceTree = "<group>"; };
+		4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListSpec.m; sourceTree = "<group>"; };
 		4F35A4891A64210500699C2E /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A48D1A64210500699C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F35A48E1A64210500699C2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -155,6 +160,7 @@
 		4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		4F35A4BE1A64464100699C2E /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		4F35A4BF1A64464100699C2E /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		4FE341EB1A69A6510070580A /* ItemSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSpec.m; sourceTree = "<group>"; };
 		4FF7B3901A65C2E200224919 /* WatchApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF7B3931A65C2E200224919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FF7B3941A65C2E200224919 /* InterfaceController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InterfaceController.h; sourceTree = "<group>"; };
@@ -164,6 +170,8 @@
 		4FF7B3A11A65C2E200224919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4FF7B3A31A65C2E200224919 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		4FF7B3A51A65C2E200224919 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		6B0AB804C5129723D7D79834 /* libPods-WatchAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WatchAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8EF9B68F8D14A3F9766B03A2 /* Pods-WatchAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchAppTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchAppTests/Pods-WatchAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +201,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD9E4942074F2724C659C90D /* libPods-WatchAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,13 +216,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		02E1B5DA07548090462677FB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F1A7BA31A69667E006E48FF /* libPods-WatchAppTests-Kiwi.a */,
+				4F1A7BA11A69664D006E48FF /* libPods-WatchAppTests.a */,
+				6B0AB804C5129723D7D79834 /* libPods-WatchAppTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		45F4D23664B05ECE9E760D7C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8EF9B68F8D14A3F9766B03A2 /* Pods-WatchAppTests.debug.xcconfig */,
+				0C644EDB6BB0E5AF2F6376F0 /* Pods-WatchAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		4F1A7B5B1A66D479006E48FF /* ShoppingListAPI */ = {
 			isa = PBXGroup;
 			children = (
-				4F1A7B861A66DB7B006E48FF /* ShoppingList.m */,
 				4F1A7B871A66DB7B006E48FF /* ShoppingList.h */,
-				4F1A7B881A66DB7B006E48FF /* Item.m */,
+				4F1A7B861A66DB7B006E48FF /* ShoppingList.m */,
 				4F1A7B891A66DB7B006E48FF /* Item.h */,
+				4F1A7B881A66DB7B006E48FF /* Item.m */,
 				4F1A7B5E1A66D479006E48FF /* ShoppingListAPI.h */,
 				4F1A7B5C1A66D479006E48FF /* Supporting Files */,
 			);
@@ -231,7 +259,8 @@
 		4F1A7B6A1A66D479006E48FF /* ShoppingListAPITests */ = {
 			isa = PBXGroup;
 			children = (
-				4F1A7B6D1A66D479006E48FF /* ShoppingListAPITests.m */,
+				4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */,
+				4FE341EB1A69A6510070580A /* ItemSpec.m */,
 				4F1A7B6B1A66D479006E48FF /* Supporting Files */,
 			);
 			path = ShoppingListAPITests;
@@ -255,6 +284,8 @@
 				4F1A7B5B1A66D479006E48FF /* ShoppingListAPI */,
 				4F1A7B6A1A66D479006E48FF /* ShoppingListAPITests */,
 				4F35A48A1A64210500699C2E /* Products */,
+				45F4D23664B05ECE9E760D7C /* Pods */,
+				02E1B5DA07548090462677FB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -435,9 +466,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4F35A4AF1A64210500699C2E /* Build configuration list for PBXNativeTarget "WatchAppTests" */;
 			buildPhases = (
+				26E56824ECC143E9169B0780 /* Check Pods Manifest.lock */,
 				4F35A49E1A64210500699C2E /* Sources */,
 				4F35A49F1A64210500699C2E /* Frameworks */,
 				4F35A4A01A64210500699C2E /* Resources */,
+				C8C5D5BB0AB2196396ADAFD5 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -499,7 +532,6 @@
 					};
 					4F1A7B631A66D479006E48FF = {
 						CreatedOnToolsVersion = 6.2;
-						TestTargetID = 4F35A4881A64210500699C2E;
 					};
 					4F35A4881A64210500699C2E = {
 						CreatedOnToolsVersion = 6.2;
@@ -604,6 +636,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26E56824ECC143E9169B0780 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		C8C5D5BB0AB2196396ADAFD5 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchAppTests/Pods-WatchAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4F1A7B551A66D479006E48FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -618,7 +683,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F1A7B6E1A66D479006E48FF /* ShoppingListAPITests.m in Sources */,
+				4F1A7BA61A696903006E48FF /* ShoppingListSpec.m in Sources */,
+				4FE341EC1A69A6520070580A /* ItemSpec.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -769,6 +835,7 @@
 		};
 		4F1A7B781A66D479006E48FF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EF9B68F8D14A3F9766B03A2 /* Pods-WatchAppTests.debug.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -780,13 +847,17 @@
 				);
 				INFOPLIST_FILE = ShoppingListAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchApp.app/WatchApp";
 			};
 			name = Debug;
 		};
 		4F1A7B791A66D479006E48FF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C644EDB6BB0E5AF2F6376F0 /* Pods-WatchAppTests.release.xcconfig */;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
@@ -794,8 +865,11 @@
 				);
 				INFOPLIST_FILE = ShoppingListAPITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchApp.app/WatchApp";
 			};
 			name = Release;
 		};
@@ -913,6 +987,7 @@
 		};
 		4F35A4B01A64210500699C2E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8EF9B68F8D14A3F9766B03A2 /* Pods-WatchAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -932,6 +1007,7 @@
 		};
 		4F35A4B11A64210500699C2E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C644EDB6BB0E5AF2F6376F0 /* Pods-WatchAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (

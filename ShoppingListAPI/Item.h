@@ -14,5 +14,7 @@
 @property BOOL checked;
 - (id) initWith:(NSString*)name;
 - (id) initWith:(NSString*)name andState:(BOOL)state;
+- (id) initWith:(NSString*)name andState:(BOOL)state andTimestamp:(NSDate*)updated;
 - (void) check;
+- (void)bringBack;
 @end

@@ -15,8 +15,10 @@
 @property NSArray *sortedCompletedItems;
 + (ShoppingList*) load;
 - (id) init;
+- (id) initWithSampleData;
 - (void) addItem:(Item*)item;
 - (NSArray*) sort:(BOOL)state;
 - (void) updateLists;
 - (void) save;
+- (Item*) itemWithName:(NSString*)name;
 @end
