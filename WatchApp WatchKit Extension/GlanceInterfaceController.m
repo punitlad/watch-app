@@ -33,9 +33,9 @@
     if (itemCount > 10) {
         info = [NSString stringWithFormat:@"You have %d items to buy. You better head to the supermarket.", itemCount];
     } else if (itemCount > 1) {
-        info = [NSString stringWithFormat:@"You have only %d items to buy. You could stop at the supermarket tonight.", itemCount];
+        info = [NSString stringWithFormat:@"You only have %d items to buy. You could stop at the supermarket tonight.", itemCount];
     } else if (itemCount == 1) {
-        info = [NSString stringWithFormat:@"You have only %d item to buy. It surely can wait.", itemCount];
+        info = [NSString stringWithFormat:@"You only have %d item to buy. It surely can wait.", itemCount];
     } else {
         info = @"Nothing to buy at the supermarket for now. Go on with your life ;)";
     }
