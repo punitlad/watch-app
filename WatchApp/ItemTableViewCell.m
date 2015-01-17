@@ -41,8 +41,5 @@
     [self bindTo:self.item];
 }
 
-- (IBAction)checkedValueChanged:(id)sender {
-//    NSLog(@"checked value changed %@", sender);
-}
 
 @end
