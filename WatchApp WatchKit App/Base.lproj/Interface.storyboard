@@ -5,19 +5,19 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3735"/>
     </dependencies>
     <scenes>
-        <!--Interface Controller-->
+        <!--✓ List-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController">
+                <controller title="✓ List" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
                         <table alignment="left" id="KIj-Fx-xhP">
                             <items>
-                                <tableRow identifier="itemRow" selectable="NO" id="efL-ya-KcN" customClass="ItemTableRowController">
+                                <tableRow identifier="itemRow" id="efL-ya-KcN" customClass="ItemTableRowController">
                                     <group key="rootItem" width="1" alignment="left" id="9Sm-uP-DV4">
                                         <items>
                                             <label width="87" alignment="left" verticalAlignment="center" text="Label" id="hMu-tB-ygP"/>
-                                            <button width="31" alignment="right" verticalAlignment="center" title="✓" id="tFk-22-2k7">
-                                                <color key="backgroundColor" red="0.24024510285697243" green="1" blue="0.12269304286478455" alpha="0.59999999999999998" colorSpace="calibratedRGB"/>
+                                            <button width="35" alignment="right" verticalAlignment="center" title="✓" id="tFk-22-2k7">
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 <connections>
                                                     <action selector="buttonPressed" destination="efL-ya-KcN" id="X4N-9h-pJU"/>
                                                 </connections>
@@ -27,6 +27,7 @@
                                     <connections>
                                         <outlet property="checkButton" destination="tFk-22-2k7" id="sK3-9W-skU"/>
                                         <outlet property="itemName" destination="hMu-tB-ygP" id="5Ns-Mb-jnA"/>
+                                        <segue destination="dhb-Kb-cja" kind="modal" id="jPs-T6-1ew"/>
                                     </connections>
                                 </tableRow>
                             </items>
@@ -38,19 +39,37 @@
                 </controller>
             </objects>
         </scene>
+        <!--Back-->
+        <scene sceneID="naJ-4f-dyD">
+            <objects>
+                <controller title="Back" id="dhb-Kb-cja" customClass="ItemDetailsController">
+                    <items>
+                        <label width="116" height="106" alignment="center" text="item name here" textAlignment="center" numberOfLines="6" id="bJo-uA-Jio"/>
+                        <button width="117" alignment="center" title="✓" id="jML-3m-JEt">
+                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="checkButtonPress" destination="dhb-Kb-cja" id="8fP-rz-b6R"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="checkButton" destination="jML-3m-JEt" id="ZBp-XQ-aF9"/>
+                        <outlet property="itemName" destination="bJo-uA-Jio" id="iSH-o8-tAX"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="515" y="277"/>
+        </scene>
         <!--Glance Interface Controller-->
         <scene sceneID="9p7-WV-F6t">
             <objects>
-                <glanceController id="haG-Oj-aTX" customClass="GlanceInterfaceController">
+                <glanceController topTemplateType="largeBody1" id="haG-Oj-aTX" customClass="GlanceInterfaceController">
                     <items>
-                        <group alignment="left" id="qed-gR-sLf">
-                            <items>
-                                <label width="136" alignment="left" text="Grocery List" id="D3L-Ke-lcA"/>
-                            </items>
-                        </group>
+                        <label alignment="left" text="✓ List" id="kkO-V8-I10"/>
+                        <label alignment="left" id="4RY-Ge-vlk"/>
                         <group alignment="left" id="crY-h4-Uet">
                             <items>
-                                <label width="136" height="101" alignment="left" text="info" textAlignment="left" numberOfLines="11" id="Mbb-Hc-CZ3"/>
+                                <label width="118" alignment="center" text="items to buy" textAlignment="center" numberOfLines="10" id="Mbb-Hc-CZ3"/>
                             </items>
                         </group>
                     </items>

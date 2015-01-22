@@ -27,6 +27,8 @@
 		4F35A4A91A64210500699C2E /* WatchAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4A81A64210500699C2E /* WatchAppTests.m */; };
 		4F35A4BD1A643F0A00699C2E /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */; };
 		4F35A4C01A64464100699C2E /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BF1A64464100699C2E /* ItemsViewController.m */; };
+		4F7511B21A71706D00960B48 /* check0.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F7511B11A71706D00960B48 /* check0.png */; };
+		4F7511B51A7176B000960B48 /* ItemDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7511B41A7176B000960B48 /* ItemDetailsController.m */; };
 		4FE341EC1A69A6520070580A /* ItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE341EB1A69A6510070580A /* ItemSpec.m */; };
 		4FF7B3961A65C2E200224919 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7B3951A65C2E200224919 /* InterfaceController.m */; };
 		4FF7B3981A65C2E200224919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B3971A65C2E200224919 /* Images.xcassets */; };
@@ -160,6 +162,9 @@
 		4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		4F35A4BE1A64464100699C2E /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		4F35A4BF1A64464100699C2E /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
+		4F7511B11A71706D00960B48 /* check0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check0.png; sourceTree = "<group>"; };
+		4F7511B31A7176B000960B48 /* ItemDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsController.h; sourceTree = "<group>"; };
+		4F7511B41A7176B000960B48 /* ItemDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsController.m; sourceTree = "<group>"; };
 		4FE341EB1A69A6510070580A /* ItemSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSpec.m; sourceTree = "<group>"; };
 		4FF7B3901A65C2E200224919 /* WatchApp WatchKit Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "WatchApp WatchKit Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FF7B3931A65C2E200224919 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -349,6 +354,7 @@
 		4FF7B3911A65C2E200224919 /* WatchApp WatchKit Extension */ = {
 			isa = PBXGroup;
 			children = (
+				4F7511B11A71706D00960B48 /* check0.png */,
 				4F1A7AEF1A65D56B006E48FF /* WatchApp WatchKit Extension.entitlements */,
 				4FF7B3941A65C2E200224919 /* InterfaceController.h */,
 				4FF7B3951A65C2E200224919 /* InterfaceController.m */,
@@ -358,6 +364,8 @@
 				4F1A7AEC1A65C789006E48FF /* ItemTableRowController.m */,
 				4F1A7B9E1A687720006E48FF /* GlanceInterfaceController.h */,
 				4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */,
+				4F7511B31A7176B000960B48 /* ItemDetailsController.h */,
+				4F7511B41A7176B000960B48 /* ItemDetailsController.m */,
 			);
 			path = "WatchApp WatchKit Extension";
 			sourceTree = "<group>";
@@ -621,6 +629,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FF7B39C1A65C2E200224919 /* WatchApp WatchKit App.app in Resources */,
+				4F7511B21A71706D00960B48 /* check0.png in Resources */,
 				4FF7B3981A65C2E200224919 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -714,6 +723,7 @@
 				4F1A7AED1A65C789006E48FF /* ItemTableRowController.m in Sources */,
 				4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */,
 				4FF7B3961A65C2E200224919 /* InterfaceController.m in Sources */,
+				4F7511B51A7176B000960B48 /* ItemDetailsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

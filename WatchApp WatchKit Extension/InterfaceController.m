@@ -27,6 +27,23 @@
     [super willActivate];
     self.shoppingList = [ShoppingList load];
     [self renderData];
+    
+//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 1" action:@selector(handleMenu)];
+//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 2" action:@selector(handleMenu)];
+//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 3" action:@selector(handleMenu)];
+//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 4" action:@selector(handleMenu)];
+//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 5" action:@selector(handleMenu)];
+}
+
+- (void)handleMenu {
+    NSLog(@"menu clicked!");
+}
+
+- (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier
+                            inTable:(WKInterfaceTable *)table
+                           rowIndex:(NSInteger)rowIndex {
+    ItemTableRowController *rowController = [table rowControllerAtIndex:rowIndex];
+    return rowController.item;
 }
 
 - (void)didDeactivate {
@@ -46,6 +63,7 @@
             [self.shoppingList save];
             [self renderData];
         }];
+        rowController.item = item;
         [rowController.itemName setText:item.name];
         i++;
     }
