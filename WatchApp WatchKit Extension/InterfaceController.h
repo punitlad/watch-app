@@ -15,4 +15,5 @@
 @property ShoppingList *shoppingList;
 - (void)renderData;
 - (void)handleMenu;
+- (int)findIndexOfItem:(Item*)item;
 @end

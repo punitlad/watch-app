@@ -51,6 +51,16 @@
     [super didDeactivate];
 }
 
+- (int)findIndexOfItem:(Item*)item {
+    for(int i=0; i<self.shoppingList.sortedItems.count; i++) {
+        Item *currentItem = self.shoppingList.sortedItems[i];
+        if (currentItem.name == item.name) {
+            return i;
+        }
+    }
+    return -1;
+}
+
 -(void)renderData {
     [self.itemTable setNumberOfRows:self.shoppingList.sortedItems.count withRowType:@"itemRow"];
     
@@ -58,10 +68,18 @@
     for (Item *item in self.shoppingList.sortedItems) {
         ItemTableRowController *rowController = [self.itemTable rowControllerAtIndex:i];
         [rowController onItemCheck:^{
+            int index = [self findIndexOfItem:item];
+            
+            
             [item check];
             [self.shoppingList updateLists];
             [self.shoppingList save];
-            [self renderData];
+            
+            
+            if (index >= 0) {
+                [self.itemTable removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:index]];
+            }
+            
         }];
         rowController.item = item;
         [rowController.itemName setText:item.name];

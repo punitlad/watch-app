@@ -11,6 +11,7 @@
 @implementation ItemTableRowController
 
 - (IBAction)buttonPressed {
+    [self.buttonGroup setBackgroundColor:[UIColor greenColor]];
     self.itemCheckCAllbackBlock();
 }
 

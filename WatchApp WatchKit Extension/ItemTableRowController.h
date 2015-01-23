@@ -12,6 +12,7 @@
 @interface ItemTableRowController : NSObject
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *itemName;
 @property (weak, nonatomic) IBOutlet WKInterfaceButton *checkButton;
+@property (weak, nonatomic) IBOutlet WKInterfaceGroup *buttonGroup;
 @property (copy) void (^itemCheckCAllbackBlock)(void);
 @property Item *item;
 - (IBAction)buttonPressed;
