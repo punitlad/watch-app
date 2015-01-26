@@ -2,7 +2,7 @@
 # platform :ios, '6.0'
 
 target 'WatchApp' do
-
+    pod 'MMWormhole', '~> 1.1.0'
 end
 
 target 'WatchAppTests' do
@@ -10,7 +10,7 @@ target 'WatchAppTests' do
 end
 
 target 'WatchApp WatchKit Extension' do
-
+    pod 'MMWormhole', '~> 1.1.0'
 end
 
 target 'WatchApp WatchKit App' do

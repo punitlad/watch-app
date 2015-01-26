@@ -98,9 +98,7 @@
                 if (self.shoppingList.sortedItems.count == 0) {
                     [self showGotItAllMessage];
                 }
-                
-//                CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("phoneShouldUpdate"), NULL, NULL, true );
-                
+                                
             }];
             rowController.item = item;
             [rowController.itemName setText:item.name];

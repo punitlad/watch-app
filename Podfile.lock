@@ -1,10 +1,15 @@
 PODS:
   - Kiwi (2.3.1)
+  - MMWormhole (1.1.0):
+    - MMWormhole/Core (= 1.1.0)
+  - MMWormhole/Core (1.1.0)
 
 DEPENDENCIES:
   - Kiwi
+  - MMWormhole (~> 1.1.0)
 
 SPEC CHECKSUMS:
   Kiwi: 73e1400209055ee9c8ba78c6012b6b642d0fb9f7
+  MMWormhole: 4730c4481718c2677412bf998422dbe305aa38a7
 
 COCOAPODS: 0.35.0
