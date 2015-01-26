@@ -20,7 +20,7 @@
     [super awakeWithContext:context];
     
     // Configure interface objects here.
-    NSLog(@"ItemDetailsController context: %@", context);
+//    NSLog(@"ItemDetailsController context: %@", context);
     Item *item = (Item*)context;
     [self.itemName setText:item.name];
 }
