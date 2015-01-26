@@ -38,7 +38,7 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center postNotificationName:@"applicationDidBecomeActive" object:self];
+    [center postNotificationName:@"phoneShouldUpdateItsData" object:self];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {
@@ -46,8 +46,12 @@
 }
 
 - (void)application:(UIApplication *)application handleWatchKitExtensionRequest:(NSDictionary *)userInfo reply:(void (^)(NSDictionary *))reply {
+    
     NSLog(@"ios app received msg from watchkit with data: '%@'", userInfo);
     reply(@{@"from": @"iphone app"});
+    
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center postNotificationName:@"phoneShouldUpdateItsData" object:self];
 }
 
 @end

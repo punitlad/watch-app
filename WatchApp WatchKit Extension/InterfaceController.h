@@ -18,4 +18,5 @@
 - (void)handleMenu;
 - (int)findIndexOfItem:(Item*)item;
 - (void)showGotItAllMessage;
+- (void)notifyPhoneOfDataChange;
 @end

@@ -28,11 +28,11 @@
     self.shoppingList = [ShoppingList load];
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(receiveNotification:) name:@"applicationDidBecomeActive" object:nil];
+    [center addObserver:self selector:@selector(receiveNotification:) name:@"phoneShouldUpdateItsData" object:nil];
 }
 
 - (void)receiveNotification:(NSNotification*)notification {
-    if ([notification.name  isEqual:@"applicationDidBecomeActive"]) {
+    if ([notification.name  isEqual:@"phoneShouldUpdateItsData"]) {
         self.shoppingList = [ShoppingList load];
         [self.itemsTableView reloadData];
     }

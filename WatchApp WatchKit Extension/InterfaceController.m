@@ -32,8 +32,6 @@
 }
 
 - (void)handleMenu {
-    NSLog(@"menu clicked!");
-    
     NSMutableArray *suggestions = [[NSMutableArray alloc] initWithCapacity:self.shoppingList.sortedCompletedItems.count];
     for (Item *item in self.shoppingList.sortedCompletedItems) {
         [suggestions addObject:item.name];
@@ -43,11 +41,15 @@
         if (results != nil && results.count == 1) {
             NSString *itemName = results[0];
             Item *item = [self.shoppingList itemWithName:itemName];
-            [item check];
-            [self.shoppingList updateLists];
-            [self.shoppingList save];
-            [self renderData];
+            if (item != nil) {
+                [item check];
+                [self.shoppingList updateLists];
+                [self.shoppingList save];
+                [self notifyPhoneOfDataChange];
+            }
         }
+        
+        [self renderData];
     }];
 }
 
@@ -85,7 +87,6 @@
             [rowController onItemCheck:^{
                 int index = [self findIndexOfItem:item];
                 
-                
                 [item check];
                 [self.shoppingList updateLists];
                 [self.shoppingList save];
@@ -98,6 +99,8 @@
                 if (self.shoppingList.sortedItems.count == 0) {
                     [self showGotItAllMessage];
                 }
+                
+                [self notifyPhoneOfDataChange];
                                 
             }];
             rowController.item = item;
@@ -109,14 +112,18 @@
     } else {
         [self showGotItAllMessage];
     }
-    
-
 }
 
 - (void)showGotItAllMessage {
     [self.messageLabel setText:@"You've got everything! You can checkout now or hard press to add an item."];
     [self.messageLabel setHidden:false];
     [self.itemTable setHidden:true];
+}
+
+- (void)notifyPhoneOfDataChange {
+    [WKInterfaceController openParentApplication:@{} reply:^(NSDictionary *replyInfo, NSError *error) {
+        // nothing to do here
+    }];
 }
 
 @end
