@@ -29,6 +29,25 @@
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(receiveNotification:) name:@"applicationDidBecomeActive" object:nil];
+    
+    
+    CFNotificationCenterAddObserver(CFNotificationCenterGetDarwinNotifyCenter(),
+                                    NULL,
+                                    MyCallBack,
+                                    CFSTR("phoneShouldUpdate"),
+                                    NULL,  
+                                    CFNotificationSuspensionBehaviorDeliverImmediately);
+    
+}
+
+void MyCallBack (CFNotificationCenterRef center,
+                 void *observer,
+                 CFStringRef name,
+                 const void *object,
+                 CFDictionaryRef userInfo)
+{
+    NSLog(@"---------- MyCallBack ----------");
+    NSLog(@"event name: %@", name);
 }
 
 - (void)receiveNotification:(NSNotification*)notification {
@@ -108,6 +127,9 @@
     }];
     [tableView moveRowAtIndexPath:indexPath toIndexPath:newPath];
     [CATransaction commit];
+    
+    
+    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("phoneShouldUpdate"), NULL, NULL, true );
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

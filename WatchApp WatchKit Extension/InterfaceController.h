@@ -13,7 +13,9 @@
 @interface InterfaceController : WKInterfaceController
 @property (weak, nonatomic) IBOutlet WKInterfaceTable *itemTable;
 @property ShoppingList *shoppingList;
+@property (weak, nonatomic) IBOutlet WKInterfaceLabel *messageLabel;
 - (void)renderData;
 - (void)handleMenu;
 - (int)findIndexOfItem:(Item*)item;
+- (void)showGotItAllMessage;
 @end

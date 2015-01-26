@@ -10,6 +10,7 @@
             <objects>
                 <controller title="✓ List" id="AgC-eL-Hgc" customClass="InterfaceController">
                     <items>
+                        <label width="116" height="1" alignment="center" hidden="YES" text="Label" textAlignment="center" numberOfLines="10" id="xyV-5R-Wkd"/>
                         <table alignment="left" id="KIj-Fx-xhP">
                             <items>
                                 <tableRow identifier="itemRow" id="efL-ya-KcN" customClass="ItemTableRowController">
@@ -38,6 +39,7 @@
                     </items>
                     <connections>
                         <outlet property="itemTable" destination="KIj-Fx-xhP" id="s9V-WK-Ghz"/>
+                        <outlet property="messageLabel" destination="xyV-5R-Wkd" id="Z3q-3G-Fms"/>
                     </connections>
                 </controller>
             </objects>

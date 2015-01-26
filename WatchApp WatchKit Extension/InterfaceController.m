@@ -20,6 +20,8 @@
 - (void)awakeWithContext:(id)context {
     [super awakeWithContext:context];
     // Configure interface objects here.
+    
+    [self addMenuItemWithItemIcon:WKMenuItemIconAdd title:@"Add item" action:@selector(handleMenu)];
 }
 
 - (void)willActivate {
@@ -27,16 +29,26 @@
     [super willActivate];
     self.shoppingList = [ShoppingList load];
     [self renderData];
-    
-//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 1" action:@selector(handleMenu)];
-//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 2" action:@selector(handleMenu)];
-//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 3" action:@selector(handleMenu)];
-//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 4" action:@selector(handleMenu)];
-//    [self addMenuItemWithImageNamed:@"check0.png" title:@"option 5" action:@selector(handleMenu)];
 }
 
 - (void)handleMenu {
     NSLog(@"menu clicked!");
+    
+    NSMutableArray *suggestions = [[NSMutableArray alloc] initWithCapacity:self.shoppingList.sortedCompletedItems.count];
+    for (Item *item in self.shoppingList.sortedCompletedItems) {
+        [suggestions addObject:item.name];
+    }
+    
+    [self presentTextInputControllerWithSuggestions:suggestions allowedInputMode:WKTextInputModePlain completion:^(NSArray *results) {
+        if (results != nil && results.count == 1) {
+            NSString *itemName = results[0];
+            Item *item = [self.shoppingList itemWithName:itemName];
+            [item check];
+            [self.shoppingList updateLists];
+            [self.shoppingList save];
+            [self renderData];
+        }
+    }];
 }
 
 - (id)contextForSegueWithIdentifier:(NSString *)segueIdentifier
@@ -62,29 +74,51 @@
 }
 
 -(void)renderData {
-    [self.itemTable setNumberOfRows:self.shoppingList.sortedItems.count withRowType:@"itemRow"];
+    int numberOfItems = (int)self.shoppingList.sortedItems.count;
     
-    int i = 0;
-    for (Item *item in self.shoppingList.sortedItems) {
-        ItemTableRowController *rowController = [self.itemTable rowControllerAtIndex:i];
-        [rowController onItemCheck:^{
-            int index = [self findIndexOfItem:item];
-            
-            
-            [item check];
-            [self.shoppingList updateLists];
-            [self.shoppingList save];
-            
-            
-            if (index >= 0) {
-                [self.itemTable removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:index]];
-            }
-            
-        }];
-        rowController.item = item;
-        [rowController.itemName setText:item.name];
-        i++;
+    if (numberOfItems > 0) {
+        [self.itemTable setNumberOfRows:numberOfItems withRowType:@"itemRow"];
+        
+        int i = 0;
+        for (Item *item in self.shoppingList.sortedItems) {
+            ItemTableRowController *rowController = [self.itemTable rowControllerAtIndex:i];
+            [rowController onItemCheck:^{
+                int index = [self findIndexOfItem:item];
+                
+                
+                [item check];
+                [self.shoppingList updateLists];
+                [self.shoppingList save];
+                
+                
+                if (index >= 0) {
+                    [self.itemTable removeRowsAtIndexes:[NSIndexSet indexSetWithIndex:index]];
+                }
+                
+                if (self.shoppingList.sortedItems.count == 0) {
+                    [self showGotItAllMessage];
+                }
+                
+//                CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("phoneShouldUpdate"), NULL, NULL, true );
+                
+            }];
+            rowController.item = item;
+            [rowController.itemName setText:item.name];
+            i++;
+        }
+        [self.messageLabel setHidden:true];
+        [self.itemTable setHidden:false];
+    } else {
+        [self showGotItAllMessage];
     }
+    
+
+}
+
+- (void)showGotItAllMessage {
+    [self.messageLabel setText:@"You've got everything! You can checkout now or hard press to add an item."];
+    [self.messageLabel setHidden:false];
+    [self.itemTable setHidden:true];
 }
 
 @end
