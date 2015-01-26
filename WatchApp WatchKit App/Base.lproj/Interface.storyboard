@@ -51,7 +51,10 @@
                 <controller title="Back" id="dhb-Kb-cja" customClass="ItemDetailsController">
                     <items>
                         <label width="116" height="106" alignment="center" text="item name here" textAlignment="center" numberOfLines="6" id="bJo-uA-Jio"/>
-                        <button width="24" height="24" alignment="center" hidden="YES" backgroundImage="circle-0.png" id="jML-3m-JEt">
+                        <button alignment="center" hidden="YES" id="jML-3m-JEt">
+                            <group key="contentGroup" width="24" height="24" alignment="left" radius="12" id="r5y-5a-WKC">
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </group>
                             <connections>
                                 <action selector="checkButtonPress" destination="dhb-Kb-cja" id="8fP-rz-b6R"/>
                             </connections>
