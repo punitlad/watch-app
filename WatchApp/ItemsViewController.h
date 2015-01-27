@@ -9,12 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <ShoppingListAPI/ShoppingList.h>
 #import <MMWormhole.h>
+#import <TRAutocompleteView.h>
+#import <TRAutocompleteItemsSource.h>
+#import <TRAutocompletionCellFactory.h>
 
-@interface ItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface ItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TRAutocompleteItemsSource, TRAutocompletionCellFactory>
 @property ShoppingList *shoppingList;
 @property (strong, nonatomic) IBOutlet UITableView *itemsTableView;
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
 @property MMWormhole *wormhole;
+@property TRAutocompleteView *autocompleteView;
 - (BOOL) inputIsEmpty;
 - (void)receiveNotification:(NSNotification*)notification;
 @end

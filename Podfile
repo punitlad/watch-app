@@ -3,6 +3,7 @@
 
 target 'WatchApp' do
     pod 'MMWormhole', '~> 1.1.0'
+    pod 'TRAutocompleteView', '~> 1.1'
 end
 
 target 'WatchAppTests' do

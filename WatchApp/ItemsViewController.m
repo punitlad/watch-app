@@ -8,6 +8,8 @@
 
 #import "ItemsViewController.h"
 #import "ItemTableViewCell.h"
+#import "ItemSuggestionCell.h"
+#import "SuggestionItem.h"
 
 @interface ItemsViewController ()
 
@@ -26,6 +28,18 @@
 //    [[[ShoppingList alloc] initWithSampleData] save];
     
     self.shoppingList = [ShoppingList load];
+    
+    self.autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:self.itemTextField
+                                                         usingSource:self
+                                                         cellFactory:self
+                                                        presentingIn:self];
+    
+//    self.autocompleteView.backgroundColor = [UIColor greenColor];
+    
+    __weak typeof(self) weakSelf = self;
+    self.autocompleteView.didAutocompleteWith = ^(id <TRSuggestionItem> suggestion) {
+        [weakSelf processTextInput];
+    };
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self selector:@selector(receiveNotification:) name:@"applicationDidBecomeActive" object:nil];
@@ -124,54 +138,54 @@
                           identifier:@"phoneHasChangedData"];
 }
 
+- (void)processTextInput {
+    [self.itemTextField resignFirstResponder];
+    
+    if (![self inputIsEmpty]) {
+        
+        Item *item;
+        if ((item = [self.shoppingList itemWithName:self.itemTextField.text]) != nil) {
+            NSArray *list = item.checked ? self.shoppingList.sortedCompletedItems : self.shoppingList.sortedItems;
+            int index = (int)[list indexOfObject:item];
+            NSIndexPath *fromPath = [NSIndexPath indexPathForRow:index inSection:item.checked ? 1 : 0];
+            NSIndexPath *toPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            
+            [item bringBack];
+            [self.shoppingList updateLists];
+            [self.shoppingList save];
+            
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:^{
+                [self.itemsTableView reloadData];
+            }];
+            [self.itemsTableView moveRowAtIndexPath:fromPath toIndexPath:toPath];
+            [CATransaction commit];
+            
+        } else {
+            item = [[Item alloc] initWith:self.itemTextField.text];
+            [self.shoppingList addItem:item];
+            
+            [CATransaction begin];
+            [CATransaction setCompletionBlock:^{
+                [self.itemsTableView reloadData];
+            }];
+            NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
+            [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationTop];
+            [CATransaction commit];
+        }
+        
+        [self.shoppingList save];
+        self.itemTextField.text = @"";
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
     if (textField == self.itemTextField) {
-        [textField resignFirstResponder];
-        
-        if (![self inputIsEmpty]) {
-            
-            Item *item;
-            if ((item = [self.shoppingList itemWithName:textField.text]) != nil) {
-                NSArray *list = item.checked ? self.shoppingList.sortedCompletedItems : self.shoppingList.sortedItems;
-                int index = (int)[list indexOfObject:item];
-                NSIndexPath *fromPath = [NSIndexPath indexPathForRow:index inSection:item.checked ? 1 : 0];
-                NSIndexPath *toPath = [NSIndexPath indexPathForRow:0 inSection:0];
-                
-                [item bringBack];
-                [self.shoppingList updateLists];
-                [self.shoppingList save];
-                
-                [CATransaction begin];
-                [CATransaction setCompletionBlock:^{
-                    [self.itemsTableView reloadData];
-                }];
-                [self.itemsTableView moveRowAtIndexPath:fromPath toIndexPath:toPath];
-                [CATransaction commit];
-                
-            } else {
-                item = [[Item alloc] initWith:textField.text];
-                [self.shoppingList addItem:item];
-                
-                [CATransaction begin];
-                [CATransaction setCompletionBlock:^{
-                    [self.itemsTableView reloadData];
-                }];
-                NSIndexPath *newPath = [NSIndexPath indexPathForRow:0 inSection:0];
-                [self.itemsTableView insertRowsAtIndexPaths:@[newPath] withRowAnimation:UITableViewRowAnimationTop];
-                [CATransaction commit];
-            }
-            
-            [self.shoppingList save];
-            textField.text = @"";
-        }
+        [self processTextInput];
         
         return NO;
     }
     return YES;
-}
-
-- (BOOL)textFieldShouldEndEditing:(UITextField *)textField{
-    return (textField == self.itemTextField && [self inputIsEmpty]);
 }
 
 - (BOOL) inputIsEmpty {
@@ -182,9 +196,30 @@
 }
 
 - (IBAction)editingDidEnd:(id)sender {
-    self.itemTextField.text = @"";
 }
 
+- (NSUInteger)minimumCharactersToTrigger {
+    return 1;
+}
+
+- (void)itemsFor:(NSString *)query whenReady:(void (^)(NSArray *))suggestionsReady {
+    NSMutableArray *suggestions = [[NSMutableArray alloc] init];
+    NSString *queryLowercase = [query lowercaseString];
+    for (Item *item in self.shoppingList.sortedCompletedItems) {
+        NSString *itemNameLowercase = [item.name lowercaseString];
+        if ([itemNameLowercase hasPrefix:queryLowercase]) {
+            [suggestions addObject:[SuggestionItem withText:item.name]];
+        }
+    }
+    suggestionsReady(suggestions);
+}
+
+- (id <TRAutocompletionCell>)createReusableCellWithIdentifier:(NSString *)identifier {
+    ItemSuggestionCell *cell = [[ItemSuggestionCell alloc]
+                                            initWithStyle:UITableViewCellStyleDefault
+                                            reuseIdentifier:identifier];
+    return cell;
+}
 
 /*
 #pragma mark - Navigation
