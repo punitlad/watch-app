@@ -172,6 +172,9 @@
             [CATransaction commit];
         }
         
+        [self.wormhole passMessageObject:@{@"titleString" : @"title"}
+                              identifier:@"phoneHasChangedData"];
+        
         [self.shoppingList save];
         self.itemTextField.text = @"";
     }
