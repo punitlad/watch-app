@@ -21,7 +21,17 @@
     [super awakeWithContext:context];
     // Configure interface objects here.
     
-    [self addMenuItemWithItemIcon:WKMenuItemIconAdd title:@"Add item" action:@selector(handleMenu)];
+    [self addMenuItemWithItemIcon:WKMenuItemIconAdd title:@"Add item" action:@selector(handleMenuAdd)];
+    [self addMenuItemWithItemIcon:WKMenuItemIconResume title:@"Refresh" action:@selector(handleMenuRefresh)];
+    
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.tw.WatchApp"
+                                                         optionalDirectory:@"wormhole"];
+    
+    [self.wormhole listenForMessageWithIdentifier:@"phoneHasChangedData"
+                                         listener:^(id messageObject) {
+                                             self.shoppingList = [ShoppingList load];
+                                             [self renderData];
+                                         }];
 }
 
 - (void)willActivate {
@@ -31,7 +41,12 @@
     [self renderData];
 }
 
-- (void)handleMenu {
+- (void)handleMenuRefresh {
+    self.shoppingList = [ShoppingList load];
+    [self renderData];
+}
+
+- (void)handleMenuAdd {
     NSMutableArray *suggestions = [[NSMutableArray alloc] initWithCapacity:self.shoppingList.sortedCompletedItems.count];
     for (Item *item in self.shoppingList.sortedCompletedItems) {
         [suggestions addObject:item.name];
@@ -107,8 +122,8 @@
             [rowController.itemName setText:item.name];
             i++;
         }
-        [self.messageLabel setHidden:true];
-        [self.itemTable setHidden:false];
+        [self.messageLabel setHidden:YES];
+        [self.itemTable setHidden:NO];
     } else {
         [self showGotItAllMessage];
     }
@@ -116,14 +131,13 @@
 
 - (void)showGotItAllMessage {
     [self.messageLabel setText:@"You've got everything! You can checkout now or hard press to add an item."];
-    [self.messageLabel setHidden:false];
-    [self.itemTable setHidden:true];
+    [self.messageLabel setHidden:NO];
+    [self.itemTable setHidden:YES];
 }
 
 - (void)notifyPhoneOfDataChange {
-    [WKInterfaceController openParentApplication:@{} reply:^(NSDictionary *replyInfo, NSError *error) {
-        // nothing to do here
-    }];
+    [self.wormhole passMessageObject:@{@"titleString" : @"title"}
+                          identifier:@"watchHasChangedData"];
 }
 
 @end

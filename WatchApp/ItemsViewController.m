@@ -28,11 +28,22 @@
     self.shoppingList = [ShoppingList load];
 
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
-    [center addObserver:self selector:@selector(receiveNotification:) name:@"phoneShouldUpdateItsData" object:nil];
+    [center addObserver:self selector:@selector(receiveNotification:) name:@"applicationDidBecomeActive" object:nil];
+    
+    self.wormhole = [[MMWormhole alloc] initWithApplicationGroupIdentifier:@"group.tw.WatchApp"
+                                                         optionalDirectory:@"wormhole"];
+    
+    [self.wormhole listenForMessageWithIdentifier:@"watchHasChangedData"
+                                         listener:^(id messageObject) {
+                                             // Do Something
+                                             NSLog(@"watch has changed data");
+                                             self.shoppingList = [ShoppingList load];
+                                             [self.itemsTableView reloadData];
+                                         }];
 }
 
 - (void)receiveNotification:(NSNotification*)notification {
-    if ([notification.name  isEqual:@"phoneShouldUpdateItsData"]) {
+    if ([notification.name  isEqual:@"applicationDidBecomeActive"]) {
         self.shoppingList = [ShoppingList load];
         [self.itemsTableView reloadData];
     }
@@ -109,8 +120,8 @@
     [tableView moveRowAtIndexPath:indexPath toIndexPath:newPath];
     [CATransaction commit];
     
-    
-    CFNotificationCenterPostNotification(CFNotificationCenterGetDarwinNotifyCenter(), CFSTR("phoneShouldUpdate"), NULL, NULL, true );
+    [self.wormhole passMessageObject:@{@"titleString" : @"title"}
+                          identifier:@"phoneHasChangedData"];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

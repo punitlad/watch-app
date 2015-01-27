@@ -8,14 +8,17 @@
 
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
-#include <ShoppingListAPI/ShoppingList.h>
+#import <ShoppingListAPI/ShoppingList.h>
+#import <MMWormhole.h>
 
 @interface InterfaceController : WKInterfaceController
-@property (weak, nonatomic) IBOutlet WKInterfaceTable *itemTable;
+@property (strong, nonatomic) IBOutlet WKInterfaceTable *itemTable;
 @property ShoppingList *shoppingList;
 @property (weak, nonatomic) IBOutlet WKInterfaceLabel *messageLabel;
+@property MMWormhole *wormhole;
 - (void)renderData;
-- (void)handleMenu;
+- (void)handleMenuAdd;
+- (void)handleMenuRefresh;
 - (int)findIndexOfItem:(Item*)item;
 - (void)showGotItAllMessage;
 - (void)notifyPhoneOfDataChange;
