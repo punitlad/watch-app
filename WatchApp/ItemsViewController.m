@@ -34,8 +34,6 @@
                                                          cellFactory:self
                                                         presentingIn:self];
     
-//    self.autocompleteView.backgroundColor = [UIColor greenColor];
-    
     __weak typeof(self) weakSelf = self;
     self.autocompleteView.didAutocompleteWith = ^(id <TRSuggestionItem> suggestion) {
         [weakSelf processTextInput];
@@ -204,6 +202,7 @@
 
 - (void)itemsFor:(NSString *)query whenReady:(void (^)(NSArray *))suggestionsReady {
     NSMutableArray *suggestions = [[NSMutableArray alloc] init];
+    
     NSString *queryLowercase = [query lowercaseString];
     for (Item *item in self.shoppingList.sortedCompletedItems) {
         NSString *itemNameLowercase = [item.name lowercaseString];
@@ -211,7 +210,9 @@
             [suggestions addObject:[SuggestionItem withText:item.name]];
         }
     }
+    
     suggestionsReady(suggestions);
+    self.autocompleteView.hidden = (suggestions.count == 0);
 }
 
 - (id <TRAutocompletionCell>)createReusableCellWithIdentifier:(NSString *)identifier {
