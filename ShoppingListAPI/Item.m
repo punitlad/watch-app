@@ -25,7 +25,7 @@
         
         self.name = trimmedName;
         self.checked = state;
-        self.updated = [NSDate date];
+        self.updated = updated;
     }
     
     return self;
