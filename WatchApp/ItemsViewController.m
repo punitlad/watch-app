@@ -29,6 +29,8 @@
     
     self.shoppingList = [ShoppingList load];
     
+    self.suggestions = [self.shoppingList allSuggestions];
+    
     self.autocompleteView = [TRAutocompleteView autocompleteViewBindedTo:self.itemTextField
                                                          usingSource:self
                                                          cellFactory:self
@@ -207,10 +209,10 @@
     NSMutableArray *suggestions = [[NSMutableArray alloc] init];
     
     NSString *queryLowercase = [query lowercaseString];
-    for (Item *item in self.shoppingList.sortedCompletedItems) {
-        NSString *itemNameLowercase = [item.name lowercaseString];
+    for (NSString *suggestion in self.suggestions) {
+        NSString *itemNameLowercase = [suggestion lowercaseString];
         if ([itemNameLowercase hasPrefix:queryLowercase]) {
-            [suggestions addObject:[SuggestionItem withText:item.name]];
+            [suggestions addObject:[SuggestionItem withText:suggestion]];
         }
     }
     

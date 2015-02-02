@@ -19,6 +19,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *itemTextField;
 @property MMWormhole *wormhole;
 @property TRAutocompleteView *autocompleteView;
+@property NSArray *suggestions;
 - (BOOL) inputIsEmpty;
 - (void)receiveNotification:(NSNotification*)notification;
 @end

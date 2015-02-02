@@ -86,7 +86,6 @@
     NSUserDefaults *userDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.tw.WatchApp"];
     [userDefaults setObject:dataSave forKey:@"shoppingList"];
     [userDefaults synchronize];
-//    NSLog(@"shopping list saved");
 }
 
 - (Item*) itemWithName:(NSString*)name {
@@ -94,6 +93,17 @@
     NSPredicate *sameName = [NSPredicate predicateWithFormat:@"name ==[c] %@", trimmedName];
     NSArray *itemsWithSameName = [self.items filteredArrayUsingPredicate:sameName];
     return itemsWithSameName.count > 0 ? itemsWithSameName[0] : nil;
+}
+
+- (NSArray*) allSuggestions {
+    NSString* path = [[NSBundle bundleForClass:[ShoppingList class]] pathForResource:@"FoodItems" ofType:@"txt"];
+    NSString* content = [NSString stringWithContentsOfFile:path
+                                                  encoding:NSUTF8StringEncoding
+                                                     error:NULL];
+    
+    NSArray *array = [content componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+
+    return array;
 }
 
 @end

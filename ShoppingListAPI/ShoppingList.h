@@ -21,4 +21,5 @@
 - (void) updateLists;
 - (void) save;
 - (Item*) itemWithName:(NSString*)name;
+- (NSArray*) allSuggestions;
 @end

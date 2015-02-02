@@ -19,6 +19,7 @@
 		4F1A7B9C1A6718EE006E48FF /* ShoppingListAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4F1A7B5A1A66D479006E48FF /* ShoppingListAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */; };
 		4F1A7BA61A696903006E48FF /* ShoppingListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */; };
+		4F28A4641A80193800C28216 /* FoodItems.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F28A4631A80193800C28216 /* FoodItems.txt */; };
 		4F35A48F1A64210500699C2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A48E1A64210500699C2E /* main.m */; };
 		4F35A4921A64210500699C2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4911A64210500699C2E /* AppDelegate.m */; };
 		4F35A4981A64210500699C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A4961A64210500699C2E /* Main.storyboard */; };
@@ -150,6 +151,7 @@
 		4F1A7BA11A69664D006E48FF /* libPods-WatchAppTests.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WatchAppTests.a"; path = "Pods/build/Debug-iphoneos/libPods-WatchAppTests.a"; sourceTree = "<group>"; };
 		4F1A7BA31A69667E006E48FF /* libPods-WatchAppTests-Kiwi.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-WatchAppTests-Kiwi.a"; path = "Pods/build/Debug-iphoneos/libPods-WatchAppTests-Kiwi.a"; sourceTree = "<group>"; };
 		4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShoppingListSpec.m; sourceTree = "<group>"; };
+		4F28A4631A80193800C28216 /* FoodItems.txt */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = FoodItems.txt; sourceTree = "<group>"; };
 		4F35A4891A64210500699C2E /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A48D1A64210500699C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F35A48E1A64210500699C2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -276,6 +278,7 @@
 		4F1A7B5C1A66D479006E48FF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4F28A4631A80193800C28216 /* FoodItems.txt */,
 				4F1A7B5D1A66D479006E48FF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -624,6 +627,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F28A4641A80193800C28216 /* FoodItems.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
