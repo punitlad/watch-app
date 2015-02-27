@@ -20,8 +20,6 @@
 		4F1A7BA01A687721006E48FF /* GlanceInterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7B9F1A687721006E48FF /* GlanceInterfaceController.m */; };
 		4F1A7BA61A696903006E48FF /* ShoppingListSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1A7BA51A696903006E48FF /* ShoppingListSpec.m */; };
 		4F28A4641A80193800C28216 /* FoodItems.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4F28A4631A80193800C28216 /* FoodItems.txt */; };
-		4F35A48F1A64210500699C2E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A48E1A64210500699C2E /* main.m */; };
-		4F35A4921A64210500699C2E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4911A64210500699C2E /* AppDelegate.m */; };
 		4F35A4981A64210500699C2E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A4961A64210500699C2E /* Main.storyboard */; };
 		4F35A49A1A64210500699C2E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A4991A64210500699C2E /* Images.xcassets */; };
 		4F35A49D1A64210500699C2E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F35A49B1A64210500699C2E /* LaunchScreen.xib */; };
@@ -40,6 +38,7 @@
 		4FF7B3A91A65C2E200224919 /* WatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4FF7B3901A65C2E200224919 /* WatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AD9E4942074F2724C659C90D /* libPods-WatchAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B0AB804C5129723D7D79834 /* libPods-WatchAppTests.a */; };
 		B2E66E2653F5970FCB782561 /* libPods-WatchApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A7868F7EACAB5F3600F4BBFC /* libPods-WatchApp.a */; };
+		CCA568501AA107A300540A3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5684F1AA107A300540A3A /* AppDelegate.swift */; };
 		FC458B136DD000CD61C60A68 /* libPods-WatchApp WatchKit Extension.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC46C46CD3683C3E2FBDB4BF /* libPods-WatchApp WatchKit Extension.a */; };
 /* End PBXBuildFile section */
 
@@ -154,9 +153,6 @@
 		4F28A4631A80193800C28216 /* FoodItems.txt */ = {isa = PBXFileReference; explicitFileType = text; fileEncoding = 4; path = FoodItems.txt; sourceTree = "<group>"; };
 		4F35A4891A64210500699C2E /* WatchApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WatchApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F35A48D1A64210500699C2E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4F35A48E1A64210500699C2E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4F35A4901A64210500699C2E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4F35A4911A64210500699C2E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		4F35A4971A64210500699C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F35A4991A64210500699C2E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F35A49C1A64210500699C2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -189,6 +185,7 @@
 		A7868F7EACAB5F3600F4BBFC /* libPods-WatchApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WatchApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7BE01507579685963E87BB1 /* Pods-WatchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp/Pods-WatchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		BC46C46CD3683C3E2FBDB4BF /* libPods-WatchApp WatchKit Extension.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WatchApp WatchKit Extension.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCA5684F1AA107A300540A3A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D63159BFF44A6EF54FC500D6 /* Pods-WatchApp WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp WatchKit Extension/Pods-WatchApp WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		DFEEF0F36498D7A7AB4E7427 /* Pods-WatchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp/Pods-WatchApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -334,8 +331,7 @@
 			isa = PBXGroup;
 			children = (
 				4F1A7AEE1A65D1EF006E48FF /* WatchApp.entitlements */,
-				4F35A4901A64210500699C2E /* AppDelegate.h */,
-				4F35A4911A64210500699C2E /* AppDelegate.m */,
+				CCA5684F1AA107A300540A3A /* AppDelegate.swift */,
 				4F35A4961A64210500699C2E /* Main.storyboard */,
 				4F35A4991A64210500699C2E /* Images.xcassets */,
 				4F35A49B1A64210500699C2E /* LaunchScreen.xib */,
@@ -356,7 +352,6 @@
 			isa = PBXGroup;
 			children = (
 				4F35A48D1A64210500699C2E /* Info.plist */,
-				4F35A48E1A64210500699C2E /* main.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -795,8 +790,7 @@
 				4F35A4BD1A643F0A00699C2E /* ItemTableViewCell.m in Sources */,
 				4F35A4C01A64464100699C2E /* ItemsViewController.m in Sources */,
 				4F60A52D1A77DDC200809B3A /* ItemSuggestionCell.m in Sources */,
-				4F35A4921A64210500699C2E /* AppDelegate.m in Sources */,
-				4F35A48F1A64210500699C2E /* main.m in Sources */,
+				CCA568501AA107A300540A3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
