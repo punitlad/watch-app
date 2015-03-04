@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import <ShoppingListAPI/ShoppingList.h>
-#import <MMWormhole.h>
-#import <TRAutocompleteView.h>
-#import <TRAutocompleteItemsSource.h>
-#import <TRAutocompletionCellFactory.h>
+#import "MMWormhole.h"
+#import "TRAutocompleteView.h"
+#import "TRAutocompleteItemsSource.h"
+#import "TRAutocompletionCellFactory.h"
 
 @interface ItemsViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, TRAutocompleteItemsSource, TRAutocompletionCellFactory>
 @property ShoppingList *shoppingList;

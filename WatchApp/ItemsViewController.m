@@ -9,7 +9,7 @@
 #import "ItemsViewController.h"
 #import "ItemTableViewCell.h"
 #import "ItemSuggestionCell.h"
-#import "SuggestionItem.h"
+#import "WAtchApp-Swift.h"
 
 @interface ItemsViewController ()
 

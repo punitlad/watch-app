@@ -9,7 +9,7 @@
 #import <WatchKit/WatchKit.h>
 #import <Foundation/Foundation.h>
 #import <ShoppingListAPI/ShoppingList.h>
-#import <MMWormhole.h>
+#import "MMWormhole.h"
 
 @interface InterfaceController : WKInterfaceController
 @property (strong, nonatomic) IBOutlet WKInterfaceTable *itemTable;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <TRAutocompletionCellFactory.h>
+#import "TRAutocompletionCellFactory.h"
 
 @interface ItemSuggestionCell : UITableViewCell <TRAutocompletionCell>
 @property UILabel *label;

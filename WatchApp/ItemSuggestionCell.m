@@ -7,7 +7,7 @@
 //
 
 #import "ItemSuggestionCell.h"
-#import "SuggestionItem.h"
+#import "WatchApp-Swift.h"
 
 @implementation ItemSuggestionCell
 
