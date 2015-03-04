@@ -27,7 +27,6 @@
 		4F35A4A91A64210500699C2E /* WatchAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4A81A64210500699C2E /* WatchAppTests.m */; };
 		4F35A4BD1A643F0A00699C2E /* ItemTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */; };
 		4F35A4C01A64464100699C2E /* ItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F35A4BF1A64464100699C2E /* ItemsViewController.m */; };
-		4F60A52D1A77DDC200809B3A /* ItemSuggestionCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F60A52C1A77DDC200809B3A /* ItemSuggestionCell.m */; };
 		4F7511B51A7176B000960B48 /* ItemDetailsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F7511B41A7176B000960B48 /* ItemDetailsController.m */; };
 		4FE341EC1A69A6520070580A /* ItemSpec.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FE341EB1A69A6510070580A /* ItemSpec.m */; };
 		4FF7B3961A65C2E200224919 /* InterfaceController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FF7B3951A65C2E200224919 /* InterfaceController.m */; };
@@ -37,6 +36,7 @@
 		4FF7B3A61A65C2E200224919 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4FF7B3A51A65C2E200224919 /* Images.xcassets */; };
 		4FF7B3A91A65C2E200224919 /* WatchApp WatchKit Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4FF7B3901A65C2E200224919 /* WatchApp WatchKit Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		CC6280441AA77BE300DCC1EF /* SuggestionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6280431AA77BE300DCC1EF /* SuggestionItem.swift */; };
+		CC6280461AA78E4600DCC1EF /* ItemSuggestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC6280451AA78E4600DCC1EF /* ItemSuggestionCell.swift */; };
 		CCA568501AA107A300540A3A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA5684F1AA107A300540A3A /* AppDelegate.swift */; };
 		EC24026B86C2233B3F9826F7 /* Pods_WatchApp_WatchKit_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38ACF063865CFAC16E7D8C9D /* Pods_WatchApp_WatchKit_Extension.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		FAC4EB382760A74A0BB18062 /* Pods_WatchApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C4FB5DFCDB767F7EA520238 /* Pods_WatchApp.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -165,8 +165,6 @@
 		4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemTableViewCell.m; sourceTree = "<group>"; };
 		4F35A4BE1A64464100699C2E /* ItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewController.h; sourceTree = "<group>"; };
 		4F35A4BF1A64464100699C2E /* ItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewController.m; sourceTree = "<group>"; };
-		4F60A52B1A77DDC200809B3A /* ItemSuggestionCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemSuggestionCell.h; sourceTree = "<group>"; };
-		4F60A52C1A77DDC200809B3A /* ItemSuggestionCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSuggestionCell.m; sourceTree = "<group>"; };
 		4F7511B31A7176B000960B48 /* ItemDetailsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemDetailsController.h; sourceTree = "<group>"; };
 		4F7511B41A7176B000960B48 /* ItemDetailsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemDetailsController.m; sourceTree = "<group>"; };
 		4FE341EB1A69A6510070580A /* ItemSpec.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemSpec.m; sourceTree = "<group>"; };
@@ -185,6 +183,7 @@
 		A7BE01507579685963E87BB1 /* Pods-WatchApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp/Pods-WatchApp.debug.xcconfig"; sourceTree = "<group>"; };
 		CC6280421AA77B0400DCC1EF /* WatchApp-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "WatchApp-Bridging-Header.h"; sourceTree = "<group>"; };
 		CC6280431AA77BE300DCC1EF /* SuggestionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuggestionItem.swift; sourceTree = "<group>"; };
+		CC6280451AA78E4600DCC1EF /* ItemSuggestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemSuggestionCell.swift; sourceTree = "<group>"; };
 		CCA5684F1AA107A300540A3A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D63159BFF44A6EF54FC500D6 /* Pods-WatchApp WatchKit Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp WatchKit Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp WatchKit Extension/Pods-WatchApp WatchKit Extension.release.xcconfig"; sourceTree = "<group>"; };
 		DFEEF0F36498D7A7AB4E7427 /* Pods-WatchApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchApp/Pods-WatchApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -341,9 +340,8 @@
 				4F35A4BC1A643F0A00699C2E /* ItemTableViewCell.m */,
 				4F35A4BE1A64464100699C2E /* ItemsViewController.h */,
 				4F35A4BF1A64464100699C2E /* ItemsViewController.m */,
-				4F60A52B1A77DDC200809B3A /* ItemSuggestionCell.h */,
-				4F60A52C1A77DDC200809B3A /* ItemSuggestionCell.m */,
 				CC6280431AA77BE300DCC1EF /* SuggestionItem.swift */,
+				CC6280451AA78E4600DCC1EF /* ItemSuggestionCell.swift */,
 			);
 			path = WatchApp;
 			sourceTree = "<group>";
@@ -834,10 +832,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC6280461AA78E4600DCC1EF /* ItemSuggestionCell.swift in Sources */,
 				CC6280441AA77BE300DCC1EF /* SuggestionItem.swift in Sources */,
 				4F35A4BD1A643F0A00699C2E /* ItemTableViewCell.m in Sources */,
 				4F35A4C01A64464100699C2E /* ItemsViewController.m in Sources */,
-				4F60A52D1A77DDC200809B3A /* ItemSuggestionCell.m in Sources */,
 				CCA568501AA107A300540A3A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

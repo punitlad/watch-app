@@ -6,12 +6,12 @@ import TRAutocompleteView
     
     var suggestionText:String
     
-    init(suggestionText:String) {
-        self.suggestionText = suggestionText
+    init (completionText:String) {
+        self.suggestionText = completionText
     }
     
     class func withText(text:String) -> SuggestionItem {
-        var s:SuggestionItem = SuggestionItem(suggestionText:text)
+        var s:SuggestionItem = SuggestionItem(completionText:text)
         return s
     }
     

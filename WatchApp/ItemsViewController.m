@@ -8,8 +8,7 @@
 
 #import "ItemsViewController.h"
 #import "ItemTableViewCell.h"
-#import "ItemSuggestionCell.h"
-#import "WAtchApp-Swift.h"
+#import "WatchApp-Swift.h"
 
 @interface ItemsViewController ()
 
