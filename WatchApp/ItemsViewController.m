@@ -7,7 +7,6 @@
 //
 
 #import "ItemsViewController.h"
-#import "ItemTableViewCell.h"
 #import "WatchApp-Swift.h"
 
 @interface ItemsViewController ()
